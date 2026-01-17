@@ -132,3 +132,10 @@ stages:
         sshKeyFile: '$(sshKeyFile)'
         serverDirectory: '$(serverDirectoryLive)'
         artifactName: '$(resourceName)-uncompiled'
+  
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          curl -X POST $(VehicleWrapsRestartApiEndpoint) -H "Content-Type: application/json" -d '{"$(VehicleWrapsRestartApiToken)"}'
+        
