@@ -1,0 +1,17 @@
+parameters:
+- name: resourceName
+
+steps:
+- task: CopyFiles@2
+  displayName: 'Copy files to uncompiled folder' 
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/${{ parameters.resourceName }}'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/uncompiled'
+
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish uncompiled artifacts'
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)/uncompiled'
+    artifact: '${{ parameters.resourceName }}-uncompiled'
+    publishLocation: 'pipeline'
