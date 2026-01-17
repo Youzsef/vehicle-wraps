@@ -9,7 +9,6 @@ trigger:
   branches:
     include:
     - main
-    - feature/wrap-assets-pipelines
   paths:
     include:
     - RPGvehicleWrapAssets
@@ -45,7 +44,7 @@ stages:
         artifactName: '$(resourceName)-compiled'
 
 - stage: DevServerDeploy
-  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/feature/wrap-assets-pipelines'))
+  condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/main'))
   dependsOn: Build
   jobs:
   - job: 
