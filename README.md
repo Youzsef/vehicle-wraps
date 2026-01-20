@@ -1,71 +1,93 @@
 # SAESRPG - Custom Vehicle Wraps
 
-This is the community vehicle wrap repository.
+Welcome to the official community vehicle wrap repository for **SAESRPG**.
 
-This repository allows players to upload and manage their custom vehicle wraps for use within **SAESRPG**.
+This repository allows players and organisations to upload and manage custom vehicle wraps.
 
-## ℹ️ Information about wraps
-Custom wraps can be used by organisations and players with donation points.
+> **ℹ️ Need more info?**
+> Detailed documentation and usage guides can be found on the [Wiki](https://github.com/saesrpg/vehicle-wraps/wiki).
 
-If you need further information, it can be found here: https://github.com/saesrpg/vehicle-wraps/wiki
+## 📂 Which type of wrap are you adding?
 
-## 📂 Repository Structure
+Please choose the instruction set below that matches your needs.
 
-To keep things organised, wraps are stored using a specific folder hierarchy.
+| Wrap Type | For Who? | Requirement |
+| :--- | :--- | :--- |
+| **Donation Wraps** | Individual Players | Requires Donation Points. |
+| **Organisation Wraps** | Groups, Gangs, Squads | For official organisations. |
 
-### The Path
-All wraps must reside in the following path:
-`RPGvehicleWrapAssets/wraps/custom/users/<your-username>/<wrap-name>/`
+## 👤 Option 1: Donation Wraps (Players)
 
-### Example
-If your username is **ronseal** and this is your first wrap, your folder structure will look like this:
+Wraps for individual users must follow a strict **username** and **sequential number** format.
+
+### 1. Folder Structure
+Navigate to: `RPGvehicleWrapAssets/wraps/custom/users/`
+
+1.  Find or create a folder with your **exact username** (e.g., `ronseal`).
+2.  Inside your user folder, create a new folder using the next **sequential number**.
+    * *Example:* If `001` exists, name the new folder `002`.
+
+**Example Path:**
+`RPGvehicleWrapAssets/wraps/custom/users/ronseal/001/`
+
+### 2. Required Files
+Inside your numbered folder (`001`), add the following:
+
+* **`wrap.png`** (Required)
+    * The image file **must** be strictly named `wrap.png`.
+    * Do not use other names.
+
+* **`allowed.txt`** (Optional)
+    * Create this file to restrict access.
+    * List allowed SAES usernames, one per line.
+    * *If omitted, the wrap is public.*
+
+Example (allowed.txt):
 
 ```text
-RPGvehicleWrapAssets/
-└── wraps/
-    └── custom/
-        └── users/
-            └── ronseal/       <-- Your Username
-                └── 001/       <-- Sequential Number
-                    ├── wrap.png
-                    └── allowed.txt (Optional)
+    ronseal
+    nanobob
+    brophy
 ```
-## 🚀 How to Add a New Wrap
-Follow these steps to contribute your custom wrap:
 
-### Fork the Repository
-Click the "Fork" button in the top-right corner of this page to create your own copy of the repository.
+## 🏢 Option 2: Organisation Wraps
 
-### Create the Directory
-Inside your forked repo, navigate to `RPGvehicleWrapAssets/wraps/custom/users/`.
-* If you are new: Create a folder with your exact username.
-* Inside your user folder: Create a new folder using the next available sequential number (e.g., `001`).
-* Example: If `001` and `002` already exist, name your new folder `003`.
+Wraps for organisations are stored by organization type (gang, squad, group, etc.).
 
-### Add Your Files
-Upload the following files into your specific numbered folder:
-* The Wrap (wrap.png)
-    * It must be in PNG format.
-    * The file must be named wrap.png.
+### 1. Folder Structure
+Navigate to: `RPGvehicleWrapAssets/wraps/custom/orgs/`
 
-* Access Control (allowed.txt)
-    * This is optional; however, if you want to restrict people who can use this wrap, then create this file.
-    * List the SAES username of allowed users inside the file (one per line).
+1.  Open the folder matching your organization type (e.g., `group`, `gang`, `squad`).
+2.  You do **not** create a sub-folder here. You simply drop the image file directly into this folder.
 
-#### Example (allowed.txt):
-```text
-ronseal
-nanobob
-brophy
-```
-If this file is omitted, the wrap may be accessible publicly.
+**Example Path:**
+`RPGvehicleWrapAssets/wraps/custom/orgs/group/`
 
-### Commit and Push
-Commit your changes to your forked repository. Use a descriptive message, for example: Added custom wrap: ronseal/001.
+### 2. Required Files
+* **`<orgname>.png`** (Required)
+    * The image file should be named after your organization (e.g., `soa.png`, `bope.png`).
+    * *Note: Organisation wraps do not use `allowed.txt`.*
 
-### Create a Pull Request (PR)
-Go back to the original SAESRPG/vehicle-wraps repository.
+## 🚀 How to Submit (Pull Request)
 
-Click Pull Requests > New Pull Request.
+Once you have prepared your files locally, follow these steps to upload them:
 
-Select your fork and submit the PR for review.
+1.  **Fork the Repository:** Click the "Fork" button (top-right) to create your own copy.
+2.  **Add Your Files:** Create the folders and upload the files as described in Option 1 or Option 2 above.
+3.  **Commit:** Save your changes with a descriptive message (e.g., `Added wrap: ronseal/001` or `Added org wrap: soa.png`).
+4.  **Open a Pull Request:**
+    * Go to the "Pull Requests" tab in the original `SAESRPG/vehicle-wraps` repository.
+    * Click **New Pull Request**.
+    * Select your fork and submit.
+
+## ✅ General Rules
+
+* **File Format:** All images must be in **.PNG** format.
+* **File Naming:**
+    * **Users:** Must be `wrap.png`.
+    * **Orgs:** Must be `orgname.png`.
+* **Content:** Designs must comply with SAESRPG community guidelines.
+
+## ❓ Troubleshooting
+
+If you need help, contact support on Discord: https://saesrpg.uk/discord
